@@ -67,3 +67,11 @@ manual, comum em linguagens de mais baixo nível.
 
 ---
 <img src="../prints/saida-arvore.png" alt="Saída Árvore" width=200>
+
+    Exemplo de percurso pré-ordem, formatado como árvore:
+        
+      10
+     /  \
+     5   15
+    / \
+    3  7
