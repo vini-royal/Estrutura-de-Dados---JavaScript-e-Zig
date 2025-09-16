@@ -1,4 +1,3 @@
-FilaSimples.js
 class Fila {
   constructor() {
     this.itens = [];

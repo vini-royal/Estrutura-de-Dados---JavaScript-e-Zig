@@ -65,6 +65,8 @@ elegível para coleta de lixo, liberando o
 programador da responsabilidade de desalocação
 manual, comum em linguagens de mais baixo nível.
 
+- [Implementação de árvore](../Códigos-fonte/JavaScript/Arvore.js)
+
 ---
 <img src="../prints/saida-arvore.png" alt="Saída Árvore" width=200>
 
