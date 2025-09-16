@@ -3,7 +3,9 @@ class Conjunto {
         this.itens = {};
     }
 
-    // Adiciona um elemento ao conjunto (se não existir)
+    // adicionar(elemento): Antes de inserir, verifica-se se a chave já existe no objeto interno usando 
+    // Object.prototype.hasOwnProperty.call(), 
+    // um método robusto para evitar conflitos. Se não existir, o elemento é adicionado como uma chave-valor
     adicionar(elemento) {
         if (!this.contem(elemento)) {
             this.itens[elemento] = elemento;
@@ -12,7 +14,7 @@ class Conjunto {
         return false;
     }
 
-    // Remove um elemento do conjunto
+    // remover(elemento): Utiliza o operador delete para remover a propriedade do objeto interno correspondente ao elemento.
     remover(elemento) {
         if (this.contem(elemento)) {
             delete this.itens[elemento];
@@ -21,7 +23,10 @@ class Conjunto {
         return false;
     }
 
-    // Verifica se um elemento pertence ao conjunto
+    // contem(elemento): Verifica a existência da chave no objeto interno, também utilizando a verificação segura com hasOwnProperty. 
+    // Uma decisão de projeto importante nesta implementação é o retorno de um booleano nas operações de adição e remoção, 
+    // informando se a operação foi bem-sucedida (isto é, se o elemento foi de fato adicionado ou removido), 
+    // o que aumenta a utilidade da classe para o usuário.
     contem(elemento) {
         
         return Object.prototype.hasOwnProperty.call(this.itens, elemento);
@@ -37,7 +42,8 @@ class Conjunto {
         return Object.values(this.itens);
     }
 
-    // União: combina este conjunto com outro, retornando um novo conjunto
+    // uniao(outroConjunto): Cria um novo conjunto e adiciona todos os elementos do conjunto atual e do conjunto passado como parâmetro. 
+    // A propriedade de unicidade é mantida naturalmente pelo método adicionar
     uniao(outroConjunto) {
         const conjuntoUniao = new Conjunto();
         this.valores().forEach(item => conjuntoUniao.adicionar(item));
@@ -45,7 +51,8 @@ class Conjunto {
         return conjuntoUniao;
     }
 
-    // Interseção: retorna um novo conjunto com elementos comuns a ambos
+    // interseccao(outroConjunto): Percorre os elementos do conjunto atual e adiciona ao novo conjunto apenas 
+    // aqueles que também estão presentes no outro conjunto
     interseccao(outroConjunto) {
         const conjuntoInter = new Conjunto();
         this.valores().forEach(item => {
@@ -56,7 +63,8 @@ class Conjunto {
         return conjuntoInter;
     }
 
-    // Diferença: retorna um novo conjunto com elementos que estão apenas no primeiro
+    // diferenca(outroConjunto): Percorre os elementos do conjunto atual e 
+    // adiciona ao novo conjunto apenas os que NÃO estão presentes no outro conjunto.
     diferenca(outroConjunto) {
         const conjuntoDiff = new Conjunto();
         this.valores().forEach(item => {
@@ -67,7 +75,8 @@ class Conjunto {
         return conjuntoDiff;
     }
 
-    // Verifica se este conjunto é subconjunto de outro
+    // ehSubconjunto(outroConjunto): Utiliza o método every() para 
+    // verificar se todos os elementos do conjunto atual estão contidos no outro conjunto.
     ehSubconjunto(outroConjunto) {
         if (this.tamanho() > outroConjunto.tamanho()) return false;
         return this.valores().every(item => outroConjunto.contem(item));
