@@ -59,3 +59,7 @@ free), geralmente orquestrada pela palavra-chave defer.
 
 ---
 ## Exemplo na prática de uma ArrayList:
+
+- [Implementação do código](../Códigos-fonte/Zig/ArrayList.zig)
+
+<img src="../prints/saida-arraylist.jpeg" alt= "Saída ArrayList" width= 300>

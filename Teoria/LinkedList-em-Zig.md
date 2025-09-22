@@ -61,3 +61,7 @@ A única maneira de acessar um elemento específico é percorrendo a lista desde
 Em resumo, a Lista Encadeada é a escolha ideal em Zig quando você precisa de inserções e remoções rápidas nas extremidades, aceitando a complexidade de gerenciar a memória de nós individuais e a travessia lenta no acesso aleatório.
 
 ## Exemplo na prática: 
+
+-[Implementação do código](../Códigos-fonte/Zig/LinkedList.zig)
+
+<img src="../prints/saida-linkedlist.jpeg" alt="Saída LinkedList" width= 500>
